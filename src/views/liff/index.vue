@@ -72,11 +72,11 @@
     created(){
       
       // line
-      this.lineInit() 
+      // this.lineInit() 
 
       //本地
-      // window.localStorage.setItem("userToken", "123");
-      // this.pageQuery()
+      window.localStorage.setItem("userToken", "123");
+      this.pageQuery()
     },
    
   }
