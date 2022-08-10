@@ -1,0 +1,45 @@
+import { extend } from 'vee-validate';
+import { required,regex,email,image } from 'vee-validate/dist/rules';
+extend('required', {
+    ...required,
+    message:'此欄位為必填'
+  });
+  extend('invoiceNum',{
+    validate: value => {
+      var rex=/^[A-Z]{2}?[0-9]{8}$/
+      return rex.test(value)
+    },
+    message:'輸入格式為大寫英文2碼數字8碼'
+  });
+
+  extend('invoiceCode',{
+    validate: value => {
+      var rex=/^[0-9]{4}$/
+      return rex.test(value)
+    },
+    message:'輸入格式為4碼數字'
+  });
+
+  extend('image', {
+    ...image,
+    message:'請上傳圖片'
+  });
+
+   extend('email', {
+    ...email,
+    message:'請填寫正確格式'
+  });
+  extend('regex', {
+    ...regex,
+    message:'請填寫正確格式'
+  });
+  extend('agree', {
+    validate: value=>{
+      if(value!==true){
+        return false
+      }else{
+        return true
+      }
+    },
+    message:'需同意'
+  });

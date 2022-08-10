@@ -1,0 +1,244 @@
+@import '~element-ui/lib/theme-chalk/date-picker.css';
+@import '~element-ui/lib/theme-chalk/pagination.css';
+@import '~element-ui/lib/theme-chalk/popover.css';
+@import '~element-ui/lib/theme-chalk/table.css';
+@import '~element-ui/lib/theme-chalk/icon.css';
+@import '~element-ui/lib/theme-chalk/message.css';
+
+/* checkbox */
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: transparent; 
+    border-color: transparent; 
+}
+.el-checkbox{
+    cursor: pointer; 
+    margin-right: 20px;
+}
+.el-checkbox__label{
+    font-size: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    padding-left: 0;
+    color: #000000CC;
+}
+.el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #000000CC;
+}
+.el-checkbox__input{
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid rgb(34 42 102);
+    background-color: transparent;
+    margin-right: 5px;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    vertical-align: middle;
+    color: #000;
+}
+.el-checkbox__inner{
+    background-image: url("~@/assets/admin/images/check.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: -3px;
+    top: -2px;
+    display: inline-block;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.el-checkbox__inner::before,.el-checkbox__inner::after{
+    display: none;
+}
+.is-checked .el-checkbox__inner{
+    opacity: 1;
+    background-color: transparent;
+    border-color: transparent;
+    transition: 0.3s;
+}
+.el-checkbox__original{
+    display: none;
+    height: 0;
+}
+/* datepicker */
+.el-range-editor .el-range-input{
+    color: #000;
+}
+.el-range-editor .el-range-input::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+/* radio */
+.el-radio{
+    display: flex;
+    flex-direction: row;
+    width: auto !important;
+    cursor: pointer;
+}
+.el-radio+.el-radio{
+    margin-left: 15px;
+}
+.el-radio__input{
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-b);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+.el-radio__inner{
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 0.3s;
+}
+.is-checked .el-radio__inner{
+    background-color: var(--primary-b);
+    transform: translate(-50%,-50%) scale(1);
+    transition: 0.3s;
+}
+.el-radio__input input{
+    display: none;
+}
+
+/* pagination */
+.el-pager li{
+    min-width: 28px;
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+.el-pagination .btn-prev{
+    padding-right: 0;
+}
+.el-pagination .btn-next{
+    padding-left: 0;
+}
+.el-pager li.active{
+    background-color: #f2f2f2;
+    color: #000;
+    border-radius: 8px;
+}
+.el-pager li:hover,.el-pagination button:hover{
+    color: #000;
+}
+
+/* popover */
+.el-popover{
+    padding: 30px 20px;
+}
+.el-popover h5{
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+/* table */
+.el-table__header-wrapper{
+    width: 100%;
+}
+.el-table__header{
+    text-align: left;
+    font-size: 16px;
+}
+.el-table thead {
+    color: #000000CC !important;
+}
+.el-table .caret-wrapper{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+}
+.el-table .sort-caret{
+    border: 5px solid transparent;
+    right: 0px;
+    left: initial;
+}
+.el-table .sort-caret.ascending {
+    border-bottom-color: #C4C4C4;
+    border-radius: 3px;
+    top: 5px;
+}
+.el-table .ascending .sort-caret.ascending{
+    border-bottom-color: var(--secondary-b);
+}
+.el-table .sort-caret.descending{
+    border-top-color: #C4C4C4;
+    border-radius: 3px;
+    bottom: 6px;
+}
+.el-table td.el-table__cell{
+    border-bottom: none;
+}
+
+.el-table .descending .sort-caret.descending{
+    border-top-color: var(--secondary-b);
+
+}
+.el-table .el-table__cell{
+    padding: 10px;
+}
+.el-table .cell{
+    word-break: break-word;
+    text-overflow: initial;
+    padding: 0;
+}
+.el-table th.el-table__cell>.cell{
+    white-space: nowrap;
+    padding-right: 15px;
+    padding-left: 0;
+}
+.el-table th.el-table__cell{
+    font-weight: 500;
+}
+/* datepicker */
+.el-range-editor .el-range-input{
+    font-size: 15px;
+    width: 97px;
+}
+.el-range-editor--small .el-range__close-icon, .el-range-editor--small .el-range__icon{
+    display: none;
+}
+.el-date-editor .el-range-separator{
+    flex-shrink: 0;
+    width: 20px;
+    padding: 0;
+}
+.el-range-editor.el-input__inner{
+    height: 38px;
+    font-size: 15px;
+    width: 100%;
+    padding: 6px 0px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary-b);
+    width: auto;
+}
+/* message */
+.el-message{
+    background-color: #ffffff !important;
+    border-color: var(--primary-b) !important;
+}
+.el-message__icon{
+    font-size: 24px;
+}
+.el-message__icon.el-icon-warning{
+    color: var(--primary-b);
+}
+.el-message p{
+    color: #454545 !important;
+}
